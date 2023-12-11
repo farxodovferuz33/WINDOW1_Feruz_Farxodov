@@ -1,7 +1,6 @@
--- ==> A query to generate a sales report for customers ranked in the top 300
--- ==> Based on total sales in the years 1998, 1999, and 2001, below the query is detailed description
 
-WITH RankedSales AS (
+
+WITH RSales AS (
   SELECT
     cust_id,
     channel_id,
@@ -25,7 +24,7 @@ SELECT
   total_sales,
   sales_rank
 FROM
-  RankedSales
+  RSales
 WHERE
   sales_rank <= 300
 AND 
